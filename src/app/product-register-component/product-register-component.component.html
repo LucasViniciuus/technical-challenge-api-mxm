@@ -1,3 +1,54 @@
-<div class="container">
-    teste
-</div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Arniway API</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Estoque</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Em desenvolvimento</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Procurar</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<form (ngSubmit)="cadastrarProduto()">
+    <div class="container mt-5">
+        <h3>Cadastro de produtos</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Nome do produto</label>
+                <input type="text" class="form-control" [(ngModel)]="nome" name="nome">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Identificação do produto</label>
+                <input type="text" class="form-control" [(ngModel)]="identificacao" name="identificacao">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Preço</label>
+                <input type="number" class="form-control" [(ngModel)]="preco" name="preco">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Quantidade</label>
+                <input type="number" class="form-control" [(ngModel)]="quantidade" name="quantidade">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning">Cadastrar produto</button>
+    </div>
+</form>
