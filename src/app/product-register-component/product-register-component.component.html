@@ -35,21 +35,57 @@
         <div class="row">
             <div class="col-md-6">
                 <label class="form-label">Nome do produto</label>
-                <input type="text" class="form-control" [(ngModel)]="nome" name="nome">
+                <input type="text" class="form-control" [(ngModel)]="product.name" name="name">
             </div>
             <div class="col-md-6">
-                <label class="form-label">Identificação do produto</label>
-                <input type="text" class="form-control" [(ngModel)]="identificacao" name="identificacao">
+                <label class="form-label">Preço</label>
+                <input type="number" class="form-control" [(ngModel)]="product.price" name="price">
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <label class="form-label">Preço</label>
-                <input type="number" class="form-control" [(ngModel)]="preco" name="preco">
+                <label class="form-label">Quantidade</label>
+                <input type="number" class="form-control" [(ngModel)]="product.quantity" name="quantity">
             </div>
             <div class="col-md-6">
-                <label class="form-label">Quantidade</label>
-                <input type="number" class="form-control" [(ngModel)]="quantidade" name="quantidade">
+                <label class="form-label">Categoria</label>
+                <input type="text" class="form-control" [(ngModel)]="product.category" name="category">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Status</label>
+                <input type="number" class="form-control" [(ngModel)]="product.status" name="status">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Fornecedor</label>
+                <input type="text" class="form-control" [(ngModel)]="product.supplier" name="supplier">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Data de validade</label>
+                <input type="date" class="form-control" [(ngModel)]="product.expirationDate" name="expirationDate">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Unidade de medida</label>
+                <input type="text" class="form-control" [(ngModel)]="product.unitMeasure" name="unitMeasure">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Peso</label>
+                <input type="number" class="form-control" [(ngModel)]="product.weight" name="weight">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Data de chegada</label>
+                <input type="date" class="form-control" [(ngModel)]="product.arrivalDate" name="arrivalDate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label class="form-label">Time responsável</label>
+                <input type="text" class="form-control" [(ngModel)]="product.team" name="team">
             </div>
         </div>
         <button type="submit" class="btn btn-warning">Cadastrar produto</button>

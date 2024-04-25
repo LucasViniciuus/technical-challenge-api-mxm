@@ -3,43 +3,43 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { error } from 'console';
 import { AppComponent } from '../app.component';
 import { FormsModule } from '@angular/forms';
+import { Product } from '../models/Product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-register-component',
   standalone: true,
-  imports: [HttpClientModule, FormsModule],
+  imports: [FormsModule, HttpClientModule],
   templateUrl: './product-register-component.component.html',
   styleUrl: './product-register-component.component.css'
 })
 export class ProductRegisterComponentComponent {
-nome: string = '';
-identificacao: string = '';
-preco: number = 0;
-quantidade: number = 0;
 
+  product: Product = {
+    id: '',
+    name: '',
+    price: 0,
+    quantity: 0,
+    category: '',
+    status: '',
+    supplier: '',
+    expirationDate: new Date(),
+    unitMeasure: '',
+    weight: 0,
+    arrivalDate: new Date(),
+    team: ''
+  };
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient, private productService: ProductService){}
 
   cadastrarProduto() {
-
-    const url = 'http://ec2-3-83-149-60.compute-1.amazonaws.com:1880/cadastroProduto';
-    const produto = {
-      nome: this.nome,
-      identificacao: this.identificacao,
-      preco: this.preco,
-      quantidade: this.quantidade
-    };
-
-    this.http.post(url, produto).subscribe(
-      response => {
-        console.log('produto cadastrado com sucesso.', response);
+    this.productService.productRegister(this.product).subscribe(
+      (data) => {
+        console.log('Produto cadastrado com sucesso:', data);
       },
-      error => {
-        console.error('Erro ao cadastrar produto', error);
+      (error) => {
+        console.error('Erro ao cadastrar produto:', error)
       }
     );
   }
-
-  
-
 }
