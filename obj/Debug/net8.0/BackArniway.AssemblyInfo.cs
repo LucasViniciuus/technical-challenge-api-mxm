@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackArniway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57d3ae8724484ecb6c08dbfdcec5364781051970")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6edd5615abe6b3c50f165d003c5088ab8d7ec54c")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackArniway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackArniway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,6 +3,7 @@ using System;
 using BackArniway.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackArniway.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240427165941_fixTableName")]
+    partial class fixTableName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.4");
@@ -54,8 +57,8 @@ namespace BackArniway.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("unitMeasure")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("unitMeasure")
+                        .HasColumnType("REAL");
 
                     b.Property<double>("weight")
                         .HasColumnType("REAL");
@@ -63,40 +66,6 @@ namespace BackArniway.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("Models.Supplier", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("SupplierType")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("cnpj")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("legalRepresentative")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("phone")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Suppliers");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,3 +1,4 @@
+using BackArniway.Controllers;
 using Microsoft.EntityFrameworkCore;
 using Models;
 
@@ -5,7 +6,8 @@ namespace BackArniway.Data
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Product> product { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
 
         protected override void OnConfiguring
         (DbContextOptionsBuilder optionsBuilder)
