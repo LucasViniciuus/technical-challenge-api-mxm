@@ -1,5 +1,5 @@
-#Desafio Técnico MXM Sistemas#
-Este projeto visa criar um sistema completo de gerenciamento de estoque, incluindo funcionalidades de cadastro de produtos, fornecedores e comunicação integrada por e-mail para os destinatários. A aplicação é desenvolvida utilizando Angular, C# ASP.NET e Node-RED para integração.
+# Desafio Técnico MXM Sistemas
+## Este projeto visa criar um sistema completo de gerenciamento de estoque, incluindo funcionalidades de cadastro de produtos, fornecedores e comunicação integrada por e-mail para os destinatários. A aplicação é desenvolvida utilizando Angular, C# ASP.NET e Node-RED para integração.
 
 Funcionalidades
 Cadastro de Produtos: Permite aos usuários cadastrar novos produtos no sistema, incluindo informações como nome, preço, quantidade, categoria, data de validade, entre outros. Além disso, o sistema oferece visibilidade sobre os produtos próximos ao vencimento e aqueles que já estão vencidos.
