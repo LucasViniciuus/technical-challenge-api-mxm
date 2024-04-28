@@ -1,9 +1,9 @@
 export interface Product {
-    id: string;
+    id: number;
     name: string;
     price: number;
     quantity: number;
-    category: string;
+    category: number;
     status: string;
     supplier: string;
     expirationDate: Date;

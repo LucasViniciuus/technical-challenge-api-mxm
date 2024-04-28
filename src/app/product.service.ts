@@ -8,27 +8,28 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class ProductService {
 
-  private apiUrl = 'http://127.0.0.1:1880/newProduct';
+  private apiUrl = "http://localhost:5204/v1/createProduct";
   constructor(private http: HttpClient) { }
 
   productRegister(product: any): Observable<any> {
+    product.arrivalDate = '2023-05-03';
+    product.expirationDate = '2023-06-06';
     return this.http.post<any>(this.apiUrl, product);
   }
 
-  getAllProducts(product: any): Observable<any> {
-    return this.http.get<any>(this.apiUrl, product);
+  getAllProducts(): Observable<any> {
+    return this.http.get<any>("http://localhost:5204/v1/getAllProducts");
   }
 
-  getProductById(product: any): Observable<any> {
-    return this.http.get<any>(this.apiUrl, product);
+  getProductById(id: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:5204/v1/getProductById/${id}`);
   }
 
-  updateProductById(product: any): Observable<any> {
-    return this.http.put<any>(this.apiUrl, product);
+  updateProductById(product: any, id: number): Observable<any> {
+    return this.http.put<any>(`http://localhost:5204/v1/updateProductById/${id}`, product);
   }
 
-  deleteProductById(product: any): Observable<any> {
-    return this.http.delete<any>(this.apiUrl, product);
+  deleteProductById(id: number): Observable<any> {
+    return this.http.delete<any>(`http://localhost:5204/v1/deleteProduct/${id}`);
   }
-
 }

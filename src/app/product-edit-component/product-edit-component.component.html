@@ -1,11 +1,11 @@
-<form (ngSubmit)="cadastrarProduto()" #productForm="ngForm" novalidate>
+<form (ngSubmit)="atualizarProduto()">
     <div class="container mt-5">
-        <h3 class="ubuntu-bold">Cadastro de produtos</h3>
+        <h3 class="ubuntu-bold">Edição do produto {{ product.id }}</h3>
         <br />
         <div class="row">
             <div class="col-md-6">
                 <label class="form-label">Nome do produto</label>
-                <input type="text" class="form-control" [(ngModel)]="product.name" name="name" required>
+                <input type="text" class="form-control" [(ngModel)]="product.name" name="name">
             </div>
             <div class="col-md-6">
                 <label class="form-label">Preço (unidade)</label>
@@ -75,6 +75,6 @@
             </div>
         </div>
         <br />
-        <button type="submit" class="btn btn-warning">Cadastrar produto</button>
+        <button type="submit" class="btn btn-warning">Salvar produto</button>
     </div>
 </form>
